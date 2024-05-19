@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Doctor</title>
+<style>
+
+  #chat-container {
+    width: 500px;
+color: #000000;
+    height: 600px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+   
+  }
+	<style>
+.boton-personalizado {
+border-radius: 25px;
+padding: 20px 25px;
+background-color: #ffd700;
+color: #000000;
+border: none;
+cursor: pointer;
+font-size: 20px;
+font-weight: bold;}
+</style>
+<style>
+body{ 
+background-image:url(igss.jpg);
+background-repeat: no repeat;
+background-size: 100% 100%;
+} 
+</style>
+
+<style>
+   .bot-message {
+    color: blue;  }
+</style>
+</head>
+<center>
+<body>
+
+<div id="chat-container"></div>
+<input type="text" id="user-input" placeholder="Escribe aquí...">
+<button onclick="sendMessage()">Enviar</button>
+
+<script>
+  const chatContainer = document.getElementById('chat-container');
+  const userInput = document.getElementById('user-input');
+
+  function sendMessage() {
+    const message = userInput.value.trim().toLowerCase(); // Convertir el mensaje a minúsculas y quitar espacios en blanco al inicio y al final
+    appendMessage('Tú:', message);
+    respondToMessage(message);
+    userInput.value = '';
+  }
+
+  function appendMessage(sender, message) {
+    const messageElement = document.createElement('div');
+    if (sender === 'paciente:') {
+      messageElement.classList.add('bot-message'); // Aplicar la clase de CSS para el texto de las respuestas del chatbot
+    }
+    messageElement.innerHTML = `<strong>${sender}</strong>: ${message}`;
+    chatContainer.appendChild(messageElement);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }
+
+  function respondToMessage(message) {
+    let response;
+    if (message.includes('cansancio')) {
+      response = 'te recomiendo que duermas bien, te alimentes bien, te hidrates bien y no te estreces.';
+    } else if (message.includes('consulta')) {
+      response = 'Para concertar una consulta, por favor comunícate con nuestro centro médico.';
+    }  else if (message.includes('ayudar')) {
+      response = 'claro, ¿dime en que puedo brindarte ayuda?';
+    } else if (message.includes('fiebre')) {
+      response = 'puedo resetarte que tomes acetaminofen cada 5 horas y ten reposo, sobre eso hidratate bien.';
+    } else if (message.includes('cerebral')) {
+      response = 'si tienes dolor cerebral puede ser por muchos factores, desde no dormir bien hasta no haber tomado suficiente agua, por el momemto te reseto que tomes acetaminofen cada 6 horas e hidratate bien, por favor';
+    } else if (message.includes('malestar')) {
+      response = '¿podrias definirme que tipo de malestar tienes?.';
+    } else if (message.includes('hola')) {
+      response = 'hola, ¿como puedo ayudarte?.';
+    } else if (message.includes('estomacal')) {
+      response = 'para ese tipo de malestar te reseto que tomes ya dea alkd o peptobismol, si tomas el alkd que sea cada 8 horas y si tomas peptobismol que sea cada 4 horas.'; }
+ else if (message.includes('receta para taquicardia')) {
+      response = 'claro, con mucho gusto, aca tienes el codigo de tu receta 3008.';
+	 } else if (message.includes('receta dolor de cabeza')) {
+      response = 'claro, con mucho gusto, aca tienes el codigo de tu receta 3308.';
+	 } else if (message.includes('receta de la piel')) {
+      response = 'claro, con mucho gusto, aca tienes el codigo de tu receta 3358.';
+ 	} else if (message.includes('receta de ligamentos')) {
+      response = 'claro, con mucho gusto, aca tienes el codigo de tu receta 3568.';
+ 	} else if (message.includes('receta del dengue')) {
+      response = 'claro, con mucho gusto, aca tienes el codigo de tu receta 3948.';
+
+} else if (message.includes('gracias')) {
+      response = 'con gusto estoy para atenderte, si necesitas algo mas no dudes en consultarme ¿esta bien?.';
+    } else {
+      response = 'No entendí. ¿Puedes repetirlo de otra manera?';
+    } 
+    setTimeout(() => appendMessage('Doctor Ruiz:', response), 500);
+  }
+</script>
+<a href="C:\Users\Admin\Desktop\PAGINA DE IGGS\DOC.HTML">
+	<button type="sumit" class="boton-personalizado"> CONSULTA</button> 
+
+<a href="receta.HTML">
+	<button type="sumit" class="boton-personalizado"> RECETA </button> 
+
+</body>
+</center>
+</html>

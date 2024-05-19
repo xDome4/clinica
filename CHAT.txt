@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Doctor</title>
+<style>
+
+  #chat-container {
+    width: 500px;
+    height: 600px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+	<style>
+.boton-personalizado {
+border-radius: 25px;
+padding: 20px 25px;
+background-color: #ffd700;
+color: #000000;
+border: none;
+cursor: pointer;
+font-size: 20px;
+font-weight: bold;
+</style>
+
+<style>
+  /* Estilos para el texto de las respuestas del chatbot */
+  .bot-message {
+    color: blue; /* Cambia el color del texto a azul */
+  }
+</style>
+</head>
+<center>
+<body>
+
+<div id="chat-container"></div>
+<input type="text" id="user-input" placeholder="Escribe aquí...">
+<button onclick="sendMessage()">Enviar</button>
+
+<script>
+  const chatContainer = document.getElementById('chat-container');
+  const userInput = document.getElementById('user-input');
+
+  function sendMessage() {
+    const message = userInput.value.trim().toLowerCase(); // Convertir el mensaje a minúsculas y quitar espacios en blanco al inicio y al final
+    appendMessage('Tú:', message);
+    respondToMessage(message);
+    userInput.value = '';
+  }
+
+  function appendMessage(sender, message) {
+    const messageElement = document.createElement('div');
+    if (sender === 'paciente:') {
+      messageElement.classList.add('bot-message'); // Aplicar la clase de CSS para el texto de las respuestas del chatbot
+    }
+    messageElement.innerHTML = `<strong>${sender}</strong>: ${message}`;
+    chatContainer.appendChild(messageElement);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }
+
+  function respondToMessage(message) {
+    let response;
+    if (message.includes('dolor')) {
+      response = 'Lo siento por el dolor. ¿Puedes describir más sobre tus síntomas?';
+    } else if (message.includes('consulta')) {
+      response = 'Para concertar una consulta, por favor comunícate con nuestro centro médico.';
+    }  else if (message.includes('ayudar')) {
+      response = 'claro, ¿dime en que puedo brindarte ayuda?';
+    } else if (message.includes('fiebre')) {
+      response = 'puedo resetarte que tomes acetaminofen cada 5 horas y ten reposo, sobre eso hidratate bien.';
+    } else if (message.includes('cabeza')) {
+      response = 'si tienes dolor de cabeza puede ser por muchos factores, desde no dormir bien hasta no haber tomado suficiente agua, por el momemto te reseto que tomes acetaminofen cada 6 horas e hidratate bien, por favor';
+    } else if (message.includes('malestar')) {
+      response = '¿podrias definirme que tipo de malestar tienes?.';
+    } else if (message.includes('hola')) {
+      response = 'hola, ¿como puedo ayudarte?.';
+    } else if (message.includes('estomacal')) {
+      response = 'para ese tipo de malestar te reseto que tomes ya dea alkd o peptobismol, si tomas el alkd que sea cada 8 horas y si tomas peptobismol que sea cada 4 horas.';
+    } else if (message.includes('gracias')) {
+      response = 'con gusto estoy para atenderte, si necesitas algo mas no dudes en consultarme ¿esta bien?.';
+    } else {
+      response = 'No entendí. ¿Puedes repetirlo de otra manera?';
+    } 
+    setTimeout(() => appendMessage('Doctor Ruiz:', response), 500);
+  }
+</script>
+<a href="C:\Users\yonat.DESKTOP-9BK8QN5\Desktop\IGSS\ya\em.html">
+	<button type="sumit" class="boton-personalizado"> CONSULTA</button> 
+
+<a href="C:\Users\yonat.DESKTOP-9BK8QN5\Desktop\IGSS\ya\em.html">
+	<button type="sumit" class="boton-personalizado"> CONSULTA</button> 
+
+</body>
+</center>
+</html>

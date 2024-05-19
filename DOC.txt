@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<LINK REL="STYLESHYEET" TYPE="TEXT/CSS" HREF="imagen.css">
+ <TITLE> IGSS </TITLE>
+<h1 style="color:gold;><font size="7"> <center> PARA ADQUIRIR CONSULTAS </center></H1>
+
+
+		<style>
+.boton-personalizado {
+border-radius: 20px;
+padding: 15px 20px;
+background-color: #ffd700;
+color: #000000;
+border: none;
+cursor: pointer;
+font-size: 20px;
+font-weight: bold;
+</style>
+
+<STYLE>
+.IMAGECOJTAIDER {
+TEXT-ALING:CENTER;
+}
+IMAGECONTAINER IMG {
+DISPLAY: INLINE;
+MARGIN: 5PX;
+}
+ </STYLE>
+</HEAD>
+
+<BODY bgcolor="black" text="white">
+<DIVID CLASS="IMAGECONTAINER">
+
+
+
+
+<center>
+<a href="C:\Users\yonat.DESKTOP-9BK8QN5\Desktop\IGSS\ya\tic.html">
+	<button class="boton-personalizado"> CONSULTA</button> 
+	</a>
+
+<a href="C:\Users\yonat.DESKTOP-9BK8QN5\Desktop\IGSS\ya\IGSS.HTML">
+	<button class="boton-personalizado"> INICIO </button> 
+	</a>
+</center>
+<center>
+
+<IMG SRC="Ruiz.jpg" height= "600" alt="imagen 2">
+
+
+<IMG SRC="elias.jpg" height= "600" alt="imagen 2">
+
+
+</center>
+<center>
+
+<IMG SRC="dome.jpg" height= "600" alt="imagen 2">
+
+	
+
+
+<IMG SRC="alessadro.jpg" height= "600" alt="imagen 2">
+
+	
+</center>
+<center>
+
+<IMG SRC="lazzo.jpg" height= "600" alt="imagen 2">
+
+
+
+<IMG SRC="navarro.jpg" height= "600" alt="imagen 2">
+
+	
+
+
+</divid>
+
+<DIVID CLASS="IMAGECONTAINER">
+
+
+
+
+</BODY>
+</HTML>

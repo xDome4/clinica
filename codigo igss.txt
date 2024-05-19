@@ -1,0 +1,34 @@
+<html>
+<head>
+<style>
+body{ 
+background-image:url(images.jpeg);
+background-repeat: no repeat;
+background-size: 100% 100%;
+} 
+</style>
+<style>
+ h1 {
+ color: #000000;
+ font-family: MS-Dialog;
+ font-size:64px;
+ text-aling: center;
+}
+</style>
+<h1><center> I G S S
+</center>
+</h1>
+</head>
+	
+	<body>
+
+<button> Consulta </button>
+
+
+
+
+
+
+
+ 
+</html>

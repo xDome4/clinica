@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buscador de imágenes con códigos</title>
+</head>
+<body>
+
+<h1>RESETAS</h1>
+
+<input type="text" id="codigo" placeholder="Ingrese el código de la receta">
+<button onclick="mostrarImagen()"> RESETA </button>
+
+<div id="imagenes" style="display: none;">
+    <img src="C:\Users\yonat.DESKTOP-9BK8QN5\Desktop\IGSS\IGSS.jpeg" alt="Imagen 1" data-codigo="26">
+    <img src="C:\Users\yonat.DESKTOP-9BK8QN5\Desktop\semestre 1\esta si\html\IMG-20231010-WA0003.jpg" alt="Imagen 2" data-codigo="342">
+    <img src="imagen3.jpg" alt="Imagen 3" data-codigo="codigo3">
+</div>
+
+<div id="resultado"></div>
+
+<script>
+function mostrarImagen() {
+    var codigo = document.getElementById("codigo").value;
+    var imagenes = document.getElementById("imagenes").getElementsByTagName("img");
+    var imagenEncontrada = null;
+
+    for (var i = 0; i < imagenes.length; i++) {
+        if (imagenes[i].getAttribute("data-codigo") === codigo) {
+            imagenEncontrada = imagenes[i];
+            break;
+        }
+    }
+
+    if (imagenEncontrada) {
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = ""; // Limpiar cualquier imagen previa
+
+        var img = document.createElement("img");
+        img.src = imagenEncontrada.src;
+        img.alt = imagenEncontrada.alt;
+
+        resultado.appendChild(img);
+    } else {
+        alert("No se encontró ninguna imagen con ese código.");
+    }
+}
+</script>
+
+</body>
+</html>
